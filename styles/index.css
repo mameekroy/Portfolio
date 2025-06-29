@@ -12,7 +12,6 @@
     font-style: normal; */
 }
 
-
 #nav{
     height: 8vh;
     display: flex;
@@ -88,26 +87,33 @@
 
 .projects{
     min-height: 100vh;
-    background: aqua;
+    overflow-x: hidden;
+    /* background: aqua; */
 }
 
 .projectcardcontainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 50vh);
+    transition: all 1s ease-in-out;
 }
 
 .projectcards{
+    gap: 40px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     margin: 40px;
     padding: 30px;
-    border: 2px solid salmon;
-    background: violet;
+    /* border: 2px solid salmon; */
+    background: black;
     border-radius: 8px;
-    color: green;
+    color: white;
+}
+
+.projectcards:hover{
+    transform: translateY(-5px);
 }
 
 .title{
@@ -122,19 +128,22 @@
 }
 
 .tags{
-    height: 1.3rem;
-    max-width: 3.5rem;
+    height: 1.5rem;
+    min-width: 2rem;
     text-align: center;
     padding: 0.3rem 0.8rem;
     margin: 1rem 0.8rem;
     border-radius: 2rem;
-    background: rgba(255, 255, 255, 0.6);
+    background: cadetblue;
+    /* background: linear-gradient(135deg, black, white) ; */
+    /* transition: all 0.2s ease-in-out; */
     font-size: small;
     font-weight: 600;
 }
 
 .contactsection{
     height: 100vh;
+    overflow-x: hidden;
     background: tan;
 }
 
@@ -152,56 +161,80 @@
 
 .contactform{
     padding: 0.5rem;
-    max-width: 50vw;
+    min-width: 15vw;
     background: teal;
     min-height: 50vh;
     border-radius: 10px;
     color: white;
     box-shadow: 10px 10px 20px #000;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
 }
 
 .formgroup{
     margin: 30px;
-    gap: 5px;
 }
 
 .formcontrol{
     outline: 1px solid tomato;
     border: none;
     border-radius: 6px;
+    padding: 5px 10px;
 }
 
 .formgroup label{
     font-weight: 700;
 }
 
+.message{
+    height: 80px;
+}
+
+.submit{
+    text-align: center;
+}
+
 .btn{
-    background: linear-gradient(45deg, rgb(103, 89, 211));
+    background: linear-gradient(135deg, blue, red);
     height: 30px;
     min-width: 150px;
     text-align: center;
-
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.projectcards :hover{
-    transform: scale(1.1);
-}
-
-@media screen {max-width: 933;
+@media (max-width : 768px){
+    
     .projectcardcontainer{
         grid-template-columns: 1fr;
     }
+
+    .main{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+
+    }
+
+    .image{
+        align-items: flex-start;
+    }
 }
 
+@media (min-width : 425x){
+    
+    .projectcardcontainer{
+        grid-template-columns: 1fr;
+    }
 
+    .main{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
 
+    }
 
-
-
-
-
-
-
-
-
+    .image{
+        align-items: flex-start;
+    }
+}
